@@ -21,6 +21,10 @@ main {
     background: #ffffff;
     border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+main:hover {
+    transform: scale(1.01);
 }
 
 /* Header & Navigation */
@@ -34,10 +38,12 @@ nav a {
     text-decoration: none;
     color: #333;
     font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 nav a:hover {
     color: #007acc;
+    transform: scale(1.1);
     text-decoration: underline;
 }
 
@@ -54,6 +60,10 @@ img[title="foto mia"] {
     margin: 15px auto;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+img[title="foto mia"]:hover {
+    transform: scale(1.05);
 }
 
 /* Sections */
@@ -78,6 +88,10 @@ aside {
     background: #e3f2fd;
     padding: 15px;
     border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+aside:hover {
+    background-color: #bbdefb;
 }
 
 /* Project Article */
@@ -87,6 +101,10 @@ article {
     border: 1px solid #e3f2fd;
     border-radius: 5px;
     margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+article:hover {
+    transform: translateY(-5px);
 }
 
 article header h4 {
@@ -127,6 +145,12 @@ select {
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+select:focus {
+    border-color: #007acc;
 }
 
 input[type="checkbox"] {
@@ -142,11 +166,11 @@ button[type="submit"] {
     border-radius: 5px;
     font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
-
 button[type="submit"]:hover {
     background-color: #005f99;
+    transform: translateY(-2px);
 }
 
 /* FAQ Styles */
@@ -157,24 +181,26 @@ details {
     border: 1px solid #b2ebf2;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+details:hover {
+    background-color: #b2ebf2;
 }
 
 details summary {
     font-weight: bold;
 }
-video,audio{
-    display: block;
-    margin: 20px auto;
-    max-width: 100%;
-    border-radius: 8px;
-}
+
 /* Video, Audio, and iFrame */
- iframe {
+video, audio, iframe {
     display: block;
     margin: 20px auto;
     max-width: 100%;
     border-radius: 8px;
-    border: 1px solid #ddd;
+    transition: box-shadow 0.3s ease;
+}
+video:hover, audio:hover, iframe:hover {
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* Modal */
@@ -183,7 +209,6 @@ dialog {
     padding: 20px;
     border-radius: 10px;
     text-align: center;
-
     position: fixed;
     top: 50%;
     left: 50%;
@@ -192,6 +217,11 @@ dialog {
     max-width: 500px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+dialog:open {
+    transform: translate(-50%, -50%) scale(1.05);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 dialog button {
@@ -203,11 +233,11 @@ dialog button {
     font-size: 1rem;
     cursor: pointer;
     margin-top: 10px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
-
 dialog button:hover {
     background-color: #005f99;
+    transform: scale(1.05);
 }
 
 /* Show Modal Button */
@@ -221,12 +251,12 @@ dialog button:hover {
     border-radius: 5px;
     font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
     margin: 20px auto;
 }
-
 #show:hover {
     background-color: #005f99;
+    transform: translateY(-3px);
 }
 
 /* Media Queries */
